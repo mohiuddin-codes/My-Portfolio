@@ -91,3 +91,64 @@ sections.forEach(section => {
 // 4. Dynamic Footer Year
 document.getElementById("year").textContent =
     new Date().getFullYear();
+
+// Initialize EmailJS
+(function () {
+    emailjs.init({
+        publicKey: "pDm-e-BzJcK8TMswB",
+    });
+})();
+
+// Contact Form Submission
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const formStatus = document.getElementById("form-status");
+
+contactForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    // Loading State
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    formStatus.textContent = "";
+    formStatus.className = "";
+
+    // Send Email
+    emailjs.sendForm(
+        "service_gueby0o",
+        "template_ggzul6r",
+        this
+    ).then(
+        function () {
+
+            formStatus.textContent =
+                "Message sent successfully!";
+
+            formStatus.className = "success";
+
+            contactForm.reset();
+
+        },
+        function (error) {
+
+            formStatus.textContent =
+                "Failed to send message. Please try again.";
+
+            formStatus.className = "error";
+
+            console.log("EmailJS Error:", error);
+
+        }
+    ).finally(function () {
+
+        // Reset Button
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+
+    });
+
+});
+
+ 

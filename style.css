@@ -451,3 +451,357 @@ footer {
         align-items: center;
     }
 }
+
+/* Professional Skills Section */
+
+#skills {
+    text-align: center;
+}
+
+#skills .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+#skills .skill-card {
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #172554
+    );
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 15px;
+    padding: 30px 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 700;
+    color: #e2e8f0;
+    transition: all 0.35s ease;
+}
+
+#skills .skill-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    border-color: #a78bfa;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+#skills {
+    text-align: left;
+}
+
+#skills h2 {
+    text-align: left;
+}
+ 
+/* Professional Contact Section */
+
+#contact .content-card {
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #172554
+    );
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 18px;
+    padding: 35px;
+    max-width: 750px;
+    transition: all 0.3s ease;
+}
+
+#contact .content-card:hover {
+    transform: translateY(-5px);
+    border-color: #60a5fa;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+}
+
+#contact .content-card p {
+    margin-bottom: 18px;
+    color: #cbd5e1;
+}
+
+#contact .content-card a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#contact .content-card a:hover {
+    color: #a78bfa;
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 10%;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-info,
+.contact-form {
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #00abf0;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    outline: none;
+    background: #1f1f1f;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00abf0;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #00abf0;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #008ac2;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    #contact {
+        padding: 60px 5%;
+    }
+}
+
+/* Contact Form Status */
+#form-status {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+#form-status.success {
+    color: #00c853;
+}
+
+#form-status.error {
+    color: #ff5252;
+}
+
+/* Loading Button */
+#submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Navbar Upgrade */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 10%;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.navbar .logo span {
+    color: #00abf0;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00abf0;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 25px 0;
+        background: #151515;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Lesson 08 - Advanced Hover Animations */
+
+/* Skill Cards */
+.skill-card {
+    transition: all 0.35s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.25);
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #8b5cf6;
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.20);
+}
+
+/* Content Cards */
+.content-card {
+    transition: all 0.35s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.18);
+}
+
+/* Button Animation */
+.btn,
+.contact-form button {
+    transition: all 0.3s ease;
+}
+
+.btn:hover,
+.contact-form button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Keyboard Focus */
+.nav-links a:focus-visible,
+.btn:focus-visible,
+button:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+/* Reduce Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
