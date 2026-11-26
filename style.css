@@ -111,21 +111,42 @@ header {
     margin-bottom: 30px;
 }
 
-/* Button */
+  
+/* Professional Buttons */
 .btn {
     display: inline-block;
-    padding: 13px 30px;
+    padding: 14px 32px;
     background: linear-gradient(90deg, #2563eb, #7c3aed);
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
-    transition: 0.3s;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.55);
+    border-color: #a78bfa;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Download CV Button */
+.cv-btn {
+    background: transparent;
+    border: 1px solid #8b5cf6;
+    color: #ffffff;
+}
+
+.cv-btn:hover {
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
 }
 
 /* General Sections */
@@ -814,13 +835,41 @@ button:focus-visible {
     align-items: center;
 }
 
+ 
 .hero-image img {
     width: 320px;
     height: 320px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid #8b5cf6;
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+
+    animation: floating 4s ease-in-out infinite;
+    transition: all 0.4s ease;
+}
+
+/* Floating Animation */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Profile Hover Effect */
+.hero-image img:hover {
+    box-shadow: 0 0 45px rgba(139, 92, 246, 0.9);
+    border-color: #a78bfa;
+}
+
 }
 .hero-image {
     display: flex !important;
@@ -860,4 +909,65 @@ button:focus-visible {
     color: #ffffff;
     transform: translateY(-7px);
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.7);
+}
+
+/* Animated Hero Background */
+.hero {
+    background: linear-gradient(
+        -45deg,
+        #080b16,
+        #11102b,
+        #17113a,
+        #080b16
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Visible Purple and Blue Glow */
+.hero {
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(124, 58, 237, 0.25),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(37, 99, 235, 0.25),
+            transparent 40%
+        ),
+        linear-gradient(-45deg, #080b16, #17113a, #080b16);
+
+    background-size: 200% 200%;
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
 }
