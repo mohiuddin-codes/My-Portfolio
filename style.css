@@ -970,3 +970,9 @@ button:focus-visible {
         background-position: 100% 100%;
     }
 }
+/* Keep Profile Image Fixed on All Devices */
+.hero-image img {
+    animation: none !important;
+    transform: none !important;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
