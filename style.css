@@ -845,7 +845,7 @@ button:focus-visible {
 
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
 
-    animation: floating 4s ease-in-out infinite;
+     
     transition: all 0.4s ease;
 }
 
