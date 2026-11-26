@@ -1,5 +1,5 @@
 
-// 1. Mobile Navigation
+//1. Mobile Navigation
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
@@ -23,10 +23,12 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 // 2. Typing Animation
 const typingText = document.getElementById("typing-text");
 
-const words = [
+ const words = [
     "Developer",
     "Programmer",
-    "Tech Enthusiast"
+    "Software Engineer",
+    "Tech Enthusiast",
+    "Full Stack Developer"
 ];
 
 let wordIndex = 0;

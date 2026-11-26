@@ -347,3 +347,107 @@ footer {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 8px 25px rgba(147, 51, 234, 0.5);
 }
+
+/* Professional Hero Section */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero-greeting {
+    color: #60a5fa;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.cv-btn {
+    background: transparent !important;
+    border: 1px solid #60a5fa !important;
+}
+
+.cv-btn:hover {
+    background: #2563eb !important;
+}
+
+/* Hero Section Responsive Design */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 75vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero-greeting {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
