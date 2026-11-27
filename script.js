@@ -165,3 +165,34 @@ contactForm.addEventListener("submit", function (event) {
     });
 
 });
+// 8. Animated Counters
+const counters = document.querySelectorAll(".counter");
+
+function runCounter(counter) {
+    const target = +counter.dataset.target;
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 40));
+
+    const timer = setInterval(() => {
+        current += step;
+
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+
+        counter.textContent = current;
+    }, 40);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            runCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+ 
