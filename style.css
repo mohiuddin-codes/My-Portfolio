@@ -24,6 +24,12 @@ html {
     scroll-padding-top: 90px;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg);
@@ -70,20 +76,23 @@ body::before {
     color: rgba(167, 139, 250, 0.18);
     font-size: 44px;
     font-weight: 800;
+    line-height: 1;
     will-change: transform;
-    backface-visibility: hidden;
-    animation: techFloat 22s linear infinite;
+    animation: techFloat 18s ease-in-out infinite;
 }
 
 .tech-bg > *:nth-child(even) {
     font-size: 62px;
-    animation-duration: 30s;
+    animation-duration: 26s;
+    animation-delay: -8s;
 }
 
+/* Only moves (no rotation), so it stays smooth on phones */
 @keyframes techFloat {
-    0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
-    50%  { transform: translate3d(0, -25px, 0) rotate(180deg); }
-    100% { transform: translate3d(0, 0, 0) rotate(360deg); }
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    25%      { transform: translate3d(14px, -20px, 0); }
+    50%      { transform: translate3d(-10px, -34px, 0); }
+    75%      { transform: translate3d(-16px, -14px, 0); }
 }
 
 .tech-bg > *:nth-child(1)  { left: 8%;  top: 15%; }
@@ -582,27 +591,4 @@ button:focus-visible {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
-}
-/* লোগো পেজের সাথে স্ক্রল হবে, তাই কাঁপবে না */
-body {
-  position: relative;
-}
-
-.tech-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  contain: none;
-  transform: none;
-}
-
-.tech-bg i,
-.tech-bg span {
-  will-change: auto;
-}html,
-body {
-  overflow-x: hidden;
-  max-width: 100%;
 }
