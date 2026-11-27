@@ -583,3 +583,22 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+/* লোগো পেজের সাথে স্ক্রল হবে, তাই কাঁপবে না */
+body {
+  position: relative;
+}
+
+.tech-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  contain: none;
+  transform: none;
+}
+
+.tech-bg i,
+.tech-bg span {
+  will-change: auto;
+}
