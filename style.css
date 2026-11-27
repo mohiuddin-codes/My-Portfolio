@@ -572,3 +572,28 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+/* মোবাইলে কাঁপুনি ঠিক করা */
+.tech-bg,
+body::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+}
+
+.tech-bg i,
+.tech-bg span {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  @keyframes techFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
