@@ -592,3 +592,15 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+.skill-card {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-card i {
+  font-size: 48px;
+}
+
+.skill-card span {
+  font-size: 18px;
+}
