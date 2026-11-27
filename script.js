@@ -1,7 +1,12 @@
-
-//1. Mobile Navigation
+ // 1. Mobile Navigation
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
+
+function closeMenu() {
+    navLinks.classList.remove("show");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+}
 
 menuToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("show");
@@ -12,24 +17,25 @@ menuToggle.addEventListener("click", () => {
 
 // Close menu after clicking a link
 document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-        menuToggle.textContent = "☰";
-        menuToggle.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeMenu);
+});
+
+// Close menu with Esc key
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeMenu();
+    }
 });
 
 
 // 2. Typing Animation
 const typingText = document.getElementById("typing-text");
 
- const words = [
-    "ICE Student",
+const words = [
     "Web Developer",
-    "Programmer",
-    "Software Engineer",
-    "Tech Enthusiast",
-    "Full Stack Developer"
+    "C++ Programmer",
+    "ICE Student",
+    "Tech Enthusiast"
 ];
 
 let wordIndex = 0;
@@ -65,19 +71,17 @@ typeEffect();
 
 
 // 3. Scroll Reveal Animation
-const sections = document.querySelectorAll(
-    "section:not(.hero)"
-);
+const sections = document.querySelectorAll("section:not(.hero)");
 
 sections.forEach(section => {
     section.classList.add("reveal");
 });
 
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("active");
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
         }
     });
 }, {
@@ -85,9 +89,11 @@ const observer = new IntersectionObserver(entries => {
 });
 
 sections.forEach(section => {
-    observer.observe(section);
+    revealObserver.observe(section);
 });
-// Highlight current section in navbar
+
+
+// 4. Highlight Current Section in Navbar
 const navAnchors = document.querySelectorAll(".nav-links a");
 
 const spy = new IntersectionObserver(entries => {
@@ -107,18 +113,20 @@ document.querySelectorAll("main section[id]").forEach(section => {
     spy.observe(section);
 });
 
-// 4. Dynamic Footer Year
-document.getElementById("year").textContent =
-    new Date().getFullYear();
 
-// Initialize EmailJS
+// 5. Dynamic Footer Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// 6. Initialize EmailJS
 (function () {
     emailjs.init({
         publicKey: "pDm-e-BzJcK8TMswB",
     });
 })();
 
-// Contact Form Submission
+
+// 7. Contact Form Submission
 const contactForm = document.getElementById("contact-form");
 const submitBtn = document.getElementById("submit-btn");
 const formStatus = document.getElementById("form-status");
@@ -141,33 +149,19 @@ contactForm.addEventListener("submit", function (event) {
         this
     ).then(
         function () {
-
-            formStatus.textContent =
-                "Message sent successfully!";
-
+            formStatus.textContent = "Message sent successfully!";
             formStatus.className = "success";
-
             contactForm.reset();
-
         },
         function (error) {
-
-            formStatus.textContent =
-                "Failed to send message. Please try again.";
-
+            formStatus.textContent = "Failed to send message. Please try again.";
             formStatus.className = "error";
-
             console.log("EmailJS Error:", error);
-
         }
     ).finally(function () {
-
         // Reset Button
         submitBtn.disabled = false;
         submitBtn.textContent = "Send Message";
-
     });
 
 });
-
- 
