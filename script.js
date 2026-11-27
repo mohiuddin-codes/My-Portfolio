@@ -24,7 +24,8 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 const typingText = document.getElementById("typing-text");
 
  const words = [
-    "Developer",
+    "ICE Student",
+    "Web Developer",
     "Programmer",
     "Software Engineer",
     "Tech Enthusiast",
@@ -86,7 +87,25 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section);
 });
+// Highlight current section in navbar
+const navAnchors = document.querySelectorAll(".nav-links a");
 
+const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navAnchors.forEach(a => {
+                a.classList.toggle(
+                    "current",
+                    a.getAttribute("href") === "#" + entry.target.id
+                );
+            });
+        }
+    });
+}, { rootMargin: "-40% 0px -55% 0px" });
+
+document.querySelectorAll("main section[id]").forEach(section => {
+    spy.observe(section);
+});
 
 // 4. Dynamic Footer Year
 document.getElementById("year").textContent =

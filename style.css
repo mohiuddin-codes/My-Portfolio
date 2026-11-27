@@ -1,7 +1,6 @@
 
 /* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
+ 
 /* Basic Reset */
 * {
     margin: 0;
@@ -975,4 +974,36 @@ button:focus-visible {
     animation: none !important;
     transform: none !important;
     transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+/* Scroll offset for fixed header */
+html {
+    scroll-padding-top: 90px;
+}
+
+/* Project tags */
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.tags li {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #c4b5fd;
+}
+
+/* Project buttons spacing */
+.project-card .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Active nav link */
+.nav-links a.current {
+    color: #a78bfa;
 }

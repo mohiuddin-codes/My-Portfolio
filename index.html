@@ -22,12 +22,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <meta property="og:description" content="Explore my portfolio, skills and web development projects.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mohiuddin-codes.github.io/My-Portfolio/">
+    <meta property="og:image" content="https://mohiuddin-codes.github.io/My-Portfolio/images/profile.jpg">
+<link rel="canonical" href="https://mohiuddin-codes.github.io/My-Portfolio/">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#080b16">
 
     <title>A T M Mohiuddin | Full Stack Developer Portfolio</title>
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -121,9 +126,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <!-- Profile Picture -->
 <div class="hero-image">
     <img src="images/profile.jpg"
+         width="320" height="320"
          alt="A T M Mohiuddin - Profile Picture">
 </div>
 
+</section>
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+
+    <div class="content-card">
+        <p>
+            I'm a 2nd-year Information and Communication Engineering
+            student at the University of Rajshahi. I'm learning C, C++
+            and web development, and I enjoy turning ideas into small
+            projects.
+        </p>
+        <p>
+            I'm currently looking for opportunities to learn,
+            collaborate and grow as a developer.
+        </p>
+    </div>
 </section>
 
 <!-- Education Section -->
@@ -165,6 +188,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             and GitHub.
         </p>
 
+        <ul class="tags">
+            <li>C++</li>
+            <li>GitHub</li>
+        </ul>
+
         <a href="https://github.com/mohiuddin-codes/My-first-project"
            target="_blank"
            rel="noopener noreferrer"
@@ -181,11 +209,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             built using HTML, CSS and JavaScript.
         </p>
 
-        <a href="https://github.com/mohiuddin-codes"
+        <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>EmailJS</li>
+        </ul>
+                 <a href="https://mohiuddin-codes.github.io/My-Portfolio/"
            target="_blank"
            rel="noopener noreferrer"
            class="btn">
-            GitHub Profile
+            Live Demo
+        </a>
+
+        <a href="https://github.com/mohiuddin-codes/My-Portfolio"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn cv-btn">
+            Source Code
         </a>
     </div>
 </section>
@@ -234,6 +275,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <input
             type="text"
             name="user_name"
+            aria-label="Your Name"
             placeholder="Your Name"
             required
         >
@@ -241,12 +283,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <input
             type="email"
             name="user_email"
+            aria-label="Your Email"
             placeholder="Your Email"
             required
         >
 
         <textarea
             name="message"
+            aria-label="Your Message"
             placeholder="Your Message"
             rows="5"
             required
