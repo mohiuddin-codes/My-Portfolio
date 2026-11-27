@@ -601,4 +601,8 @@ body {
 .tech-bg i,
 .tech-bg span {
   will-change: auto;
+}html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
