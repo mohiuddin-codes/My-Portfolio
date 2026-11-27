@@ -165,3 +165,17 @@ contactForm.addEventListener("submit", function (event) {
     });
 
 });
+// 8. আরও লোগো, পুরো পেজ জুড়ে
+window.addEventListener("load", () => {
+    const techBg = document.querySelector(".tech-bg");
+    const originals = Array.from(techBg.children);
+    const total = Math.round(document.body.scrollHeight / 120);
+
+    for (let i = 0; i < total; i++) {
+        const clone = originals[i % originals.length].cloneNode(true);
+        clone.style.left = Math.random() * 92 + "%";
+        clone.style.top = Math.random() * 95 + "%";
+        clone.style.animationDelay = (Math.random() * -20) + "s";
+        techBg.appendChild(clone);
+    }
+});
