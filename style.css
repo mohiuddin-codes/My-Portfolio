@@ -693,3 +693,100 @@ button:focus-visible {
   background: rgba(5, 7, 15, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+/* Education — ওই সাইটের মতো স্টাইল */
+#education .panel-label {
+  color: #00ff66;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+#education h2 {
+  color: #ffffff;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  margin-top: 0;
+  padding-left: 55px;
+}
+
+.timeline::before {
+  left: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, #00c853, rgba(0, 200, 83, 0.15));
+}
+
+.timeline-item {
+  margin-bottom: 45px;
+}
+
+/* বিন্দু */
+.timeline-item::before {
+  left: -55px;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: #5b6475;
+  box-shadow: none;
+}
+
+.timeline-item:first-child::before {
+  background: #00ff66;
+  box-shadow: 0 0 14px #00ff66;
+}
+
+/* সালের ট্যাগ */
+.timeline-date {
+  font-family: ui-monospace, "Courier New", monospace;
+  font-size: 14px;
+  color: #9aa4b2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 14px;
+  border-radius: 6px;
+}
+
+.timeline-item:first-child .timeline-date {
+  color: #00ff66;
+  background: rgba(0, 255, 102, 0.1);
+  border-color: rgba(0, 255, 102, 0.35);
+}
+
+/* বক্স সরিয়ে শুধু লেখা */
+.timeline-item .content-card,
+.timeline-item .content-card:hover {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 14px;
+  box-shadow: none;
+  transform: none;
+}
+
+.timeline-item .content-card h3 {
+  color: #ffffff;
+  font-size: clamp(22px, 3vw, 28px);
+  margin-bottom: 8px;
+}
+
+.timeline-item .content-card p {
+  display: inline;
+  margin: 0;
+  color: #94a3b8;
+}
+
+.timeline-item .content-card .institution {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.timeline-item .content-card .institution::after {
+  content: " — ";
+  font-weight: 400;
+  color: #94a3b8;
+}
